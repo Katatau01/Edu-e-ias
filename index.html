@@ -1,123 +1,98 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eduardo & Iasmini</title>
-  <!-- Fonte elegante do Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Segoe+UI&display=swap" rel="stylesheet" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #FFF5F7;
-      color: #5C3B40;
-      text-align: center;
-      padding: 0 1rem;
-    }
-    header {
-      background-color: #FFF5F7;
-      padding: 3rem 1rem 2rem;
-      border-bottom: 2px solid #F8E0E5;
-    }
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      color: #D48C94;
-      margin-bottom: 0.2rem;
-    }
-    h2 {
-      font-family: 'Playfair Display', serif;
-      color: #B76E79;
-      font-weight: 400;
-      margin-bottom: 1rem;
-    }
-    .verse {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 1rem auto 2rem;
-      color: #7A4F55;
-    }
-    section {
-      padding: 2rem 0;
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: left;
-    }
-    .countdown {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      margin: 1rem 0 0;
-      color: #B76E79;
-    }
-    a.button, button.button {
-      display: inline-block;
-      background-color: #D48C94;
-      color: #fff;
-      padding: 0.75rem 2rem;
-      border-radius: 25px;
-      text-decoration: none;
-      margin: 1rem 0;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
-    a.button:hover, button.button:hover {
-      background-color: #B76E79;
-    }
-    input[type="text"], input[type="email"], select {
-      padding: 0.6rem;
-      width: 100%;
-      max-width: 320px;
-      margin-bottom: 1.2rem;
-      border-radius: 8px;
-      border: 1px solid #DAB2B7;
-      background-color: #fff;
-      font-size: 1rem;
-      font-family: 'Segoe UI', sans-serif;
-    }
-    label {
-      display: block;
-      margin: 0.5rem 0 0.25rem;
-      color: #5C3B40;
-      font-weight: 600;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      max-width: 400px;
-      margin: auto;
-      text-align: left;
-      font-size: 1rem;
-      color: #5C3B40;
-    }
-    li::before {
-      content: "🎁 ";
-      margin-right: 6px;
-    }
-    footer {
-      margin-top: 3rem;
-      padding: 2rem 1rem;
-      background: #F8E0E5;
-      font-size: 0.9rem;
-      color: #5C3B40;
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-    }
-    /* Radio inputs inline */
-    .radio-group {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    .radio-group label {
-      font-weight: normal;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap');body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background-color: #FFF5F7;
+  color: #5C3B40;
+  text-align: center;
+}
+header {
+  background-color: #FFF5F7;
+  padding: 2rem 1rem;
+  border-bottom: 2px solid #F8E0E5;
+}
+h1 {
+  font-size: 3rem;
+  color: #D48C94;
+  font-family: 'Great Vibes', cursive;
+}
+h2 {
+  color: #B76E79;
+  font-size: 1.8rem;
+}
+.verse {
+  font-style: italic;
+  margin: 1rem auto;
+  max-width: 500px;
+  color: #7A4F55;
+}
+section {
+  padding: 2rem 1rem;
+}
+.countdown {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  color: #B76E79;
+}
+a.button, button.button {
+  display: inline-block;
+  background-color: #D48C94;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  margin: 1rem 0;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+a.button:hover, button.button:hover {
+  background-color: #B76E79;
+}
+input[type="text"], input[type="email"], input[type="number"] {
+  padding: 0.5rem;
+  width: 80%;
+  max-width: 300px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #DAB2B7;
+  background-color: #fff;
+}
+label {
+  display: block;
+  margin: 0.5rem 0 0.25rem;
+  color: #5C3B40;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  max-width: 400px;
+  margin: auto;
+  text-align: left;
+}
+li::before {
+  content: "🎁 ";
+}
+footer {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: #F8E0E5;
+  font-size: 0.9rem;
+  color: #5C3B40;
+}
+.save-the-date {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: #D48C94;
+  margin-top: 2rem;
+}
+
   </style>
 </head>
 <body>
@@ -125,19 +100,40 @@
     <h1>Eduardo & Iasmini</h1>
     <p class="verse">“Assim, eles já não são dois, mas sim uma só carne. Portanto, o que Deus uniu, ninguém o separe.”<br>— Mateus 19:6</p>
     <div class="countdown" id="countdown"></div>
-  </header>
-
-  <section class="info">
+  </header>  <section class="info">
     <h2>Informações do Casamento</h2>
     <p><strong>Data:</strong> 23 de novembro de 2025</p>
     <p><strong>Horário:</strong> 12:30h da tarde</p>
     <p><strong>Local:</strong> Bamboo Eventos – Monte Serrat</p>
-    <a class="button" href="https://www.google.com/maps/search/Bamboo+Eventos+Monte+Serrat" target="_blank" rel="noopener">Ver no Mapa</a>
-  </section>
-
-  <section class="presentes">
+    <a class="button" href="https://www.google.com/maps/search/Bamboo+Eventos+Monte+Serrat" target="_blank">Ver no Mapa</a>
+  </section>  <section class="rsvp">
+    <h2>Confirme sua Presença</h2>
+    <p id="mensagem-convidado">Por favor, confirme sua presença abaixo:</p>
+    <form action="https://formsubmit.co/cdossantoseduardofelipe@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Confirmação de presença no casamento" />
+      <input type="hidden" name="_captcha" value="false" />
+      <label for="nome">Nome completo:</label>
+      <input type="text" id="nome" name="nome" readonly required />
+      <label>Você irá comparecer?</label><br>
+      <input type="radio" id="sim" name="presenca" value="Sim" required />
+      <label for="sim">Sim</label>
+      <input type="radio" id="nao" name="presenca" value="Não" />
+      <label for="nao">Não</label>
+      <br><br>
+      <label>Você virá com filhos?</label><br>
+      <input type="radio" name="temFilhos" value="Sim" onclick="document.getElementById('qtdCriancas').style.display='block'"> Sim
+      <input type="radio" name="temFilhos" value="Não" onclick="document.getElementById('qtdCriancas').style.display='none'"> Não
+      <div id="qtdCriancas" style="display:none;">
+        <label for="criancas">Quantidade de crianças:</label>
+        <input type="number" id="criancas" name="quantidade_criancas" min="1" max="10">
+      </div>
+      <br>
+      <button type="submit" class="button">Confirmar Presença</button>
+    </form>
+  </section>  <section class="transicao">
+    <h2>A seguir, nossa sugestão de presentes:</h2>
+  </section>  <section class="presentes">
     <h2>Lista de Presentes</h2>
-    <p>Fique à vontade para escolher um dos itens abaixo para nos presentear:</p>
     <ul>
       <li>Panela de pressão</li>
       <li>Formas e assadeiras</li>
@@ -159,78 +155,43 @@
       <li>Escorredor de pia (alumínio)</li>
       <li>Jogo de panos de pratos</li>
       <li>Saboneteira</li>
-      <li><strong>PIX</strong> (doações são muito bem-vindas ❤️)</li>
     </ul>
-    <p>Para combinar a entrega, fale conosco pelo WhatsApp:</p>
-    <a class="button" href="https://wa.me/5561995154296" target="_blank" rel="noopener">Falar com Eduardo</a><br />
-    <a class="button" href="https://wa.me/5561992656462" target="_blank" rel="noopener">Falar com Iasmini</a>
-  </section>
-
-  <section class="rsvp">
-    <h2>Confirme sua Presença</h2>
-    <form action="https://formsubmit.co/cdossantoseduardofelipe@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="Confirmação de presença no casamento" />
-      <input type="hidden" name="_captcha" value="false" />
-      
-      <label for="nome">Nome completo:</label>
-      <input type="text" id="nome" name="nome" readonly required />
-
-      <label>Você irá comparecer?</label>
-      <div class="radio-group">
-        <input type="radio" id="sim" name="presenca" value="Sim" required />
-        <label for="sim">Sim</label>
-        <input type="radio" id="nao" name="presenca" value="Não" />
-        <label for="nao">Não</label>
-      </div>
-
-      <label>Você virá com filhos?</label>
-      <div class="radio-group">
-        <input type="radio" id="filhos-sim" name="filhos" value="Sim" />
-        <label for="filhos-sim">Sim</label>
-        <input type="radio" id="filhos-nao" name="filhos" value="Não" checked />
-        <label for="filhos-nao">Não</label>
-      </div>
-
-      <button type="submit" class="button">Confirmar Presença</button>
-    </form>
-  </section>
-
-  <footer>
+    <p><strong>Caso queira nos presentear no PIX:</strong></p>
+    <p>Chave: <strong>61995154296</strong> (celular)</p>
+  </section>  <footer>
     <p>Com carinho, Eduardo & Iasmini ❤️</p>
     <p>Nos vemos no grande dia!</p>
-  </footer>
+    <div class="save-the-date">Save the Date</div>
+  </footer>  <script>
+    const weddingDate = new Date("2025-11-23T12:30:00").getTime();
+    const countdownEl = document.getElementById("countdown");
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const weddingDate = new Date("2025-11-23T00:00:00").getTime();
-      const countdownEl = document.getElementById("countdown");
-
-      function updateCountdown() {
-        const now = new Date().getTime();
-        const diff = weddingDate - now;
-        if (diff <= 0) {
-          countdownEl.textContent = "É hoje o grande dia!";
-          return;
-        }
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        countdownEl.textContent = `Faltam ${days} dias, ${hours} horas e ${minutes} minutos!`;
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = weddingDate - now;
+      if (diff <= 0) {
+        countdownEl.textContent = "É hoje o grande dia!";
+        return;
       }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      countdownEl.textContent = `Faltam ${days} dias, ${hours} horas e ${minutes} minutos!`;
+    }
 
-      function preencherNomeConvidado() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const nome = urlParams.get('convidado');
-        if (nome) {
-          const nomeDecodificado = decodeURIComponent(nome);
-          document.getElementById('nome').value = nomeDecodificado;
-        }
+    function preencherNomeConvidado() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const nome = urlParams.get('convidado');
+      if (nome) {
+        document.getElementById('nome').value = decodeURIComponent(nome);
+        document.getElementById('mensagem-convidado').textContent = `Olá ${nome}, por favor, confirme sua presença abaixo:`;
       }
+    }
 
+    document.addEventListener("DOMContentLoaded", function () {
       updateCountdown();
       setInterval(updateCountdown, 60000);
       preencherNomeConvidado();
     });
-  </script>
-</body>
+  </script></body>
 </html>
