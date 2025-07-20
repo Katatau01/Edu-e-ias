@@ -2,76 +2,58 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Eduardo & Iasmini</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
-
     body {
       margin: 0;
-      font-family: 'Playfair Display', serif;
+      font-family: 'Segoe UI', sans-serif;
       background-color: #FFF5F7;
       color: #5C3B40;
       text-align: center;
-      line-height: 1.6;
     }
-
     header {
-      background: linear-gradient(to bottom, #FFF5F7, #ffffff);
-      padding: 3rem 1rem 2rem;
+      background-color: #FFF5F7;
+      padding: 2rem 1rem;
+      border-bottom: 2px solid #F8E0E5;
     }
-
     h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3rem;
-      color: #B76E79;
-      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+      color: #D48C94;
     }
-
     h2 {
       color: #B76E79;
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
     }
-
     .verse {
       font-style: italic;
-      max-width: 600px;
       margin: 1rem auto;
+      max-width: 500px;
       color: #7A4F55;
-      font-size: 1.1rem;
     }
-
     section {
-      padding: 2.5rem 1rem;
-      border-top: 1px solid #F8E0E5;
-      animation: fadeIn 1s ease-in;
+      padding: 2rem 1rem;
     }
-
     .countdown {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
+      margin: 1rem 0;
       color: #B76E79;
-      margin-top: 1rem;
     }
-
     a.button, button.button {
+      display: inline-block;
       background-color: #D48C94;
       color: #fff;
       padding: 0.75rem 1.5rem;
-      border-radius: 30px;
+      border-radius: 25px;
       text-decoration: none;
-      margin: 1rem 0.5rem;
+      margin: 1rem 0;
       border: none;
       cursor: pointer;
       font-size: 1rem;
       transition: background-color 0.3s ease;
     }
-
     a.button:hover, button.button:hover {
       background-color: #B76E79;
     }
-
     input[type="text"], input[type="email"] {
       padding: 0.5rem;
       width: 80%;
@@ -81,65 +63,27 @@
       border: 1px solid #DAB2B7;
       background-color: #fff;
     }
-
     label {
       display: block;
       margin: 0.5rem 0 0.25rem;
       color: #5C3B40;
-      font-weight: bold;
     }
-
     ul {
       list-style: none;
       padding: 0;
-      max-width: 500px;
+      max-width: 400px;
       margin: auto;
       text-align: left;
     }
-
     li::before {
       content: "🎁 ";
     }
-
     footer {
       margin-top: 3rem;
       padding: 2rem;
       background: #F8E0E5;
       font-size: 0.9rem;
       color: #5C3B40;
-    }
-
-    #music-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #D48C94;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 1.4rem;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      z-index: 1000;
-      transition: background-color 0.3s ease;
-    }
-
-    #music-button:hover {
-      background-color: #B76E79;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 2.2rem; }
-      h2 { font-size: 1.5rem; }
-      .button { width: 80%; }
-      section { padding: 2rem 1rem; }
     }
   </style>
 </head>
@@ -183,7 +127,7 @@
       <li>Saboneteira</li>
     </ul>
     <p>Para combinar a entrega, fale conosco pelo WhatsApp:</p>
-    <a class="button" href="https://wa.me/5561995154296" target="_blank">Falar com Eduardo</a>
+    <a class="button" href="https://wa.me/5561995154296" target="_blank">Falar com Eduardo</a><br />
     <a class="button" href="https://wa.me/5561992656462" target="_blank">Falar com Iasmini</a>
   </section>
 
@@ -210,19 +154,38 @@
     <p>Nos vemos no grande dia!</p>
   </footer>
 
-  <!-- Botão flutuante de música -->
-  <button id="music-button" onclick="playMusic()" title="Tocar música tema 🎶">🎵</button>
-
   <script>
-    const weddingDate = new Date("2025-11-23T00:00:00").getTime();
-    const countdownEl = document.getElementById("countdown");
+    document.addEventListener("DOMContentLoaded", function() {
+      const weddingDate = new Date("2025-11-23T00:00:00").getTime();
+      const countdownEl = document.getElementById("countdown");
 
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const diff = weddingDate - now;
-      if (diff <= 0) {
-        countdownEl.textContent = "É hoje o grande dia!";
-        return;
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const diff = weddingDate - now;
+        if (diff <= 0) {
+          countdownEl.textContent = "É hoje o grande dia!";
+          return;
+        }
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        countdownEl.textContent = `Faltam ${days} dias, ${hours} horas e ${minutes} minutos!`;
       }
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+      function preencherNomeConvidado() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const nome = urlParams.get('convidado');
+        if (nome) {
+          const nomeDecodificado = decodeURIComponent(nome);
+          document.getElementById('nome').value = nomeDecodificado;
+          document.getElementById('mensagem-convidado').textContent = `Olá ${nomeDecodificado}, esse convite é reservado para duas pessoas. Por favor, confirme sua presença abaixo:`;
+        }
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 60000);
+      preencherNomeConvidado();
+    });
+  </script>
+</body>
+</html>
