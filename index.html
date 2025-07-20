@@ -226,38 +226,3 @@
       }
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      countdownEl.textContent = `Faltam ${days} dias, ${hours} horas e ${minutes} minutos!`;
-    }
-
-    function preencherNomeConvidado() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const nome = urlParams.get('convidado');
-      if (nome) {
-        document.getElementById('nome').value = nome;
-        document.getElementById('mensagem-convidado').textContent = `Olá ${nome}, esse convite é reservado para duas pessoas. Por favor, confirme sua presença abaixo:`;
-      }
-    }
-
-    function playMusic() {
-      if (document.getElementById('music-player')) return;
-      const iframe = document.createElement('iframe');
-      iframe.id = "music-player";
-      iframe.width = "0";
-      iframe.height = "0";
-      iframe.src = "https://www.youtube.com/embed/N7Zo2W7b72E?autoplay=1&loop=1&playlist=N7Zo2W7b72E";
-      iframe.allow = "autoplay";
-      iframe.frameBorder = "0";
-      document.body.appendChild(iframe);
-
-      const btn = document.getElementById('music-button');
-      btn.innerText = "🔊";
-      btn.title = "Música tocando";
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 60000);
-    preencherNomeConvidado();
-  </script>
-</body>
-  </html>
