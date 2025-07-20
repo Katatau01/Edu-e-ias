@@ -38,9 +38,6 @@
       margin: 1rem 0;
       color: #B76E79;
     }
-    .info, .presentes {
-      margin-top: 2rem;
-    }
     a.button, button.button {
       display: inline-block;
       background-color: #D48C94;
@@ -137,14 +134,12 @@
   <section class="rsvp">
     <h2>Confirme sua Presença</h2>
     <p id="mensagem-convidado">Esse convite é para duas pessoas. Por favor, confirme sua presença abaixo:</p>
-
     <form action="https://formsubmit.co/cdossantoseduardofelipe@gmail.com" method="POST">
       <input type="hidden" name="_subject" value="Confirmação de presença no casamento" />
       <input type="hidden" name="_captcha" value="false" />
       <label for="nome">Nome completo:</label>
-      <input type="text" id="nome" name="nome" required readonly />
-
-      <label>Você irá comparecer?</label>
+      <input type="text" id="nome" name="nome" readonly required />
+      <label>Você irá comparecer?</label><br>
       <input type="radio" id="sim" name="presenca" value="Sim" required />
       <label for="sim">Sim</label>
       <input type="radio" id="nao" name="presenca" value="Não" />
@@ -166,16 +161,13 @@
     function updateCountdown() {
       const now = new Date().getTime();
       const diff = weddingDate - now;
-
       if (diff <= 0) {
         countdownEl.textContent = "É hoje o grande dia!";
         return;
       }
-
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-
       countdownEl.textContent = `Faltam ${days} dias, ${hours} horas e ${minutes} minutos!`;
     }
 
