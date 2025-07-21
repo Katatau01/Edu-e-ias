@@ -58,6 +58,21 @@
     a.button:hover, button.button:hover {
       background-color: #B76E79;
     }
+    .bingo-button {
+      background-color: #D48C94;
+      padding: 0.75rem 1.5rem;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
     input[type="text"], input[type="email"], input[type="number"] {
       padding: 0.5rem;
       width: 80%;
@@ -82,6 +97,23 @@
     li::before {
       content: "🎁 ";
     }
+    .baloon {
+      position: fixed;
+      bottom: 30px;
+      right: 20px;
+      background-color: #fff;
+      border: 2px solid #DAB2B7;
+      border-radius: 15px;
+      padding: 1rem;
+      max-width: 250px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: none;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     footer {
       margin-top: 3rem;
       padding: 2rem;
@@ -94,40 +126,6 @@
       font-size: 2rem;
       color: #D48C94;
       margin-top: 2rem;
-    }
-    .floating-note {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #D48C94;
-      color: white;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      display: none;
-      z-index: 1000;
-    }
-    .bingo-button {
-      background-color: #D48C94;
-      color: white;
-      padding: 0.75rem 2rem;
-      border-radius: 30px;
-      font-size: 1rem;
-      border: none;
-      cursor: pointer;
-      font-family: 'Playfair Display', serif;
-      animation: pulse 2s infinite;
-      transition: transform 0.2s ease-in-out, background-color 0.3s;
-      box-shadow: 0 0 0 0 rgba(212, 140, 148, 0.7);
-    }
-    .bingo-button:hover {
-      background-color: #B76E79;
-      transform: scale(1.05);
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(212,140,148, 0.7); }
-      70% { box-shadow: 0 0 0 10px rgba(212,140,148, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(212,140,148, 0); }
     }
   </style>
 </head>
@@ -158,7 +156,8 @@
       <input type="radio" id="sim" name="presenca" value="Sim" required />
       <label for="sim">Sim</label>
       <input type="radio" id="nao" name="presenca" value="Não" />
-      <label for="nao">Não</label><br><br>
+      <label for="nao">Não</label>
+      <br><br>
       <label>Você virá com filhos?</label><br>
       <input type="radio" name="temFilhos" value="Sim" onclick="document.getElementById('qtdCriancas').style.display='block'"> Sim
       <input type="radio" name="temFilhos" value="Não" onclick="document.getElementById('qtdCriancas').style.display='none'"> Não
@@ -168,25 +167,6 @@
       </div>
       <br>
       <button type="submit" class="button">Confirmar Presença</button>
-    </form>
-  </section>
-
-  <section class="bingo">
-    <h2>Bingo dos Noivos 🎲</h2>
-    <p>Teremos um bingo divertido durante a festa! Participe e ajude no nosso grande dia. 💖</p>
-    <p>Cartelas por <strong>R$5,00 cada</strong>.</p>
-    <form action="https://formsubmit.co/cdossantoseduardofelipe@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="Participação no Bingo dos Noivos" />
-      <input type="hidden" name="_captcha" value="false" />
-      <label>Você quer participar?</label><br>
-      <input type="radio" name="bingo" value="Sim" onclick="document.getElementById('bingoForm').style.display='block'"> Sim
-      <input type="radio" name="bingo" value="Não" onclick="document.getElementById('bingoForm').style.display='none'"> Não
-      <div id="bingoForm" style="display:none;">
-        <label for="cartelas">Quantas cartelas deseja?</label><br>
-        <input type="number" id="cartelas" name="quantidade_cartelas" min="1" max="10">
-        <br><br>
-        <button type="submit" class="bingo-button">Quero Participar</button>
-      </div>
     </form>
   </section>
 
@@ -223,17 +203,52 @@
     <p>Chave: <strong>61995154296</strong> (celular)</p>
   </section>
 
+  <div class="baloon" id="giftTip">
+    🎁 Caso queira nos presentear com algo que não esteja na lista, fique à vontade!!
+  </div>
+
+  <section class="bingo">
+    <h2>Bingo dos Noivos 🎲</h2>
+    <p>Teremos um bingo divertido durante a festa! Participe e ajude no nosso grande dia. 💖</p>
+    <p>Cartelas por <strong>R$5,00 cada</strong>.</p>
+    <form action="https://formsubmit.co/cdossantoseduardofelipe@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Participação no Bingo dos Noivos" />
+      <input type="hidden" name="_captcha" value="false" />
+
+      <label for="comprador">Seu nome:</label>
+      <input type="text" id="comprador" name="nome_comprador" required><br>
+
+      <label>Você quer participar?</label><br>
+      <input type="radio" name="bingo" value="Sim" onclick="document.getElementById('bingoForm').style.display='block'" required> Sim
+      <input type="radio" name="bingo" value="Não" onclick="document.getElementById('bingoForm').style.display='none'"> Não
+      <br><br>
+
+      <div id="bingoForm" style="display:none;">
+        <label>Quantas cartelas deseja?</label><br>
+        <label><input type="radio" name="quantidade_cartelas" value="1" required> 1</label><br>
+        <label><input type="radio" name="quantidade_cartelas" value="2"> 2</label><br>
+        <label><input type="radio" name="quantidade_cartelas" value="3"> 3</label><br>
+        <label><input type="radio" name="quantidade_cartelas" value="4"> 4</label><br>
+        <label><input type="radio" name="quantidade_cartelas" value="5"> 5</label><br><br>
+
+        <button type="submit" class="bingo-button">Quero Participar</button>
+
+        <p style="margin-top: 1rem;"><strong>Chave PIX:</strong><br>61995154296 (celular)</p>
+      </div>
+    </form>
+  </section>
+
   <footer>
     <p>Com carinho, Eduardo & Iasmini ❤️</p>
     <p>Nos vemos no grande dia!</p>
     <div class="save-the-date">Save the Date</div>
   </footer>
 
-  <div class="floating-note" id="note">Caso queira nos presentear com algo que não esteja na lista, fique à vontade!!</div>
-
   <script>
     const weddingDate = new Date("2025-11-23T12:30:00").getTime();
     const countdownEl = document.getElementById("countdown");
+    const giftSection = document.getElementById("presentes");
+    const giftTip = document.getElementById("giftTip");
 
     function updateCountdown() {
       const now = new Date().getTime();
@@ -257,26 +272,21 @@
       }
     }
 
-    function showFloatingNote() {
-      const presentsSection = document.getElementById('presentes');
-      const note = document.getElementById('note');
-      const presentsTop = presentsSection.offsetTop;
-      window.addEventListener('scroll', () => {
-        const scroll = window.scrollY + window.innerHeight;
-        if (scroll > presentsTop + 100) {
-          note.style.display = 'block';
-        } else {
-          note.style.display = 'none';
-        }
-      });
+    function checkGiftSectionVisible() {
+      const rect = giftSection.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        giftTip.style.display = 'block';
+      } else {
+        giftTip.style.display = 'none';
+      }
     }
 
     document.addEventListener("DOMContentLoaded", function () {
       updateCountdown();
       setInterval(updateCountdown, 60000);
       preencherNomeConvidado();
-      showFloatingNote();
+      window.addEventListener('scroll', checkGiftSectionVisible);
     });
   </script>
 </body>
-</html>
+  </html>
