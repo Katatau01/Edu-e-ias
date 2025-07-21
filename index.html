@@ -1,292 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eduardo & Iasmini</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convite Edu & Ias 💍</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap');
-
     body {
-      margin: 0;
-      font-family: 'Playfair Display', serif;
+      font-family: Arial, sans-serif;
       background-color: #FFF5F7;
       color: #5C3B40;
       text-align: center;
-    }
-    header {
-      background-color: #FFF5F7;
-      padding: 2rem 1rem;
-      border-bottom: 2px solid #F8E0E5;
+      padding: 2rem;
     }
     h1 {
-      font-size: 3rem;
       color: #D48C94;
-      font-family: 'Great Vibes', cursive;
     }
-    h2 {
-      color: #B76E79;
-      font-size: 1.8rem;
-    }
-    .verse {
-      font-style: italic;
-      margin: 1rem auto;
-      max-width: 500px;
-      color: #7A4F55;
-    }
-    section {
-      padding: 2rem 1rem;
-    }
-    .countdown {
-      font-size: 1.5rem;
-      margin: 1rem 0;
-      color: #B76E79;
-    }
-    a.button, button.button {
-      display: inline-block;
-      background-color: #D48C94;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 25px;
-      text-decoration: none;
-      margin: 1rem 0;
-      border: none;
-      cursor: pointer;
+    label, select, input, button {
       font-size: 1rem;
-      transition: background-color 0.3s ease;
+      margin-top: 0.5rem;
     }
-    a.button:hover, button.button:hover {
-      background-color: #B76E79;
+    form {
+      margin-top: 2rem;
     }
-    .bingo-button {
+    button {
       background-color: #D48C94;
-      padding: 0.75rem 1.5rem;
       color: white;
       border: none;
-      border-radius: 30px;
-      font-size: 1rem;
+      padding: 0.5rem 1rem;
       cursor: pointer;
-      animation: pulse 2s infinite;
+      border-radius: 5px;
     }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-    input[type="text"], input[type="email"], input[type="number"] {
-      padding: 0.5rem;
-      width: 80%;
-      max-width: 300px;
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      border: 1px solid #DAB2B7;
-      background-color: #fff;
-    }
-    label {
-      display: block;
-      margin: 0.5rem 0 0.25rem;
-      color: #5C3B40;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      max-width: 400px;
-      margin: auto;
-      text-align: left;
-    }
-    li::before {
-      content: "🎁 ";
-    }
-    .baloon {
-      position: fixed;
-      bottom: 30px;
-      right: 20px;
-      background-color: #fff;
-      border: 2px solid #DAB2B7;
-      border-radius: 15px;
-      padding: 1rem;
-      max-width: 250px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      display: none;
-      animation: fadeIn 1s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    footer {
-      margin-top: 3rem;
-      padding: 2rem;
-      background: #F8E0E5;
-      font-size: 0.9rem;
-      color: #5C3B40;
-    }
-    .save-the-date {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2rem;
-      color: #D48C94;
-      margin-top: 2rem;
+    button:hover {
+      background-color: #B76E79;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Eduardo & Iasmini</h1>
-    <p class="verse">“Assim, eles já não são dois, mas sim uma só carne. Portanto, o que Deus uniu, ninguém o separe.”<br>— Mateus 19:6</p>
-    <div class="countdown" id="countdown"></div>
-  </header>
 
-  <section class="info">
-    <h2>Informações do Casamento</h2>
-    <p><strong>Data:</strong> 23 de novembro de 2025</p>
-    <p><strong>Horário:</strong> 12:30h da tarde</p>
-    <p><strong>Local:</strong> Bamboo Eventos – Monte Serrat</p>
-    <a class="button" href="https://www.google.com/maps/search/Bamboo+Eventos+Monte+Serrat" target="_blank">Ver no Mapa</a>
-  </section>
+  <h1>💌 Edu & Ias</h1>
+  <p>Estamos muito felizes em te convidar para este momento especial! 🎉</p>
 
-  <section class="rsvp">
-    <h2>Confirme sua Presença</h2>
-    <p id="mensagem-convidado">Por favor, confirme sua presença abaixo:</p>
-    <form action="https://formsubmit.co/cdossantoseduardofelipe@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="Confirmação de presença no casamento" />
-      <input type="hidden" name="_captcha" value="false" />
-      <label for="nome">Nome completo:</label>
-      <input type="text" id="nome" name="nome" readonly required />
-      <label>Você irá comparecer?</label><br>
-      <input type="radio" id="sim" name="presenca" value="Sim" required />
-      <label for="sim">Sim</label>
-      <input type="radio" id="nao" name="presenca" value="Não" />
-      <label for="nao">Não</label>
-      <br><br>
-      <label>Você virá com filhos?</label><br>
-      <input type="radio" name="temFilhos" value="Sim" onclick="document.getElementById('qtdCriancas').style.display='block'"> Sim
-      <input type="radio" name="temFilhos" value="Não" onclick="document.getElementById('qtdCriancas').style.display='none'"> Não
-      <div id="qtdCriancas" style="display:none;">
-        <label for="criancas">Quantidade de crianças:</label>
-        <input type="number" id="criancas" name="quantidade_criancas" min="1" max="10">
-      </div>
-      <br>
-      <button type="submit" class="button">Confirmar Presença</button>
-    </form>
-  </section>
+  <!-- Formulário de confirmação -->
+  <form action="https://formsubmit.co/cdossantoseduardofelipe@gmail.com" method="POST">
+    <!-- Redireciona para a página personalizada -->
+    <input type="hidden" name="_next" value="https://katatau01.github.io/Edu-e-ias/Agradecimento.html">
 
-  <section class="transicao">
-    <h2>A seguir, nossa sugestão de presentes:</h2>
-  </section>
+    <label for="nome">Nome:</label><br>
+    <input type="text" name="nome" id="nome" required><br><br>
 
-  <section class="presentes" id="presentes">
-    <h2>Lista de Presentes</h2>
-    <ul>
-      <li>Panela de pressão</li>
-      <li>Formas e assadeiras</li>
-      <li>Jogo de taças</li>
-      <li>Chaleira elétrica</li>
-      <li>Jarra de suco</li>
-      <li>Porta temperos</li>
-      <li>Garrafa térmica</li>
-      <li>Toalhas de banho</li>
-      <li>Kit de lençol (casal)</li>
-      <li>Jogo de facas</li>
-      <li>Conjunto de xícaras</li>
-      <li>Boleira</li>
-      <li>Jogo de copos</li>
-      <li>Kit de utensílios</li>
-      <li>Kit de tapete de banheiro</li>
-      <li>Cortina para sala c/ varão</li>
-      <li>Kit de travesseiros</li>
-      <li>Escorredor de pia (alumínio)</li>
-      <li>Jogo de panos de pratos</li>
-      <li>Saboneteira</li>
-      <li>Toalha de mesa</li>
-    </ul>
-    <p><strong>Caso queira nos presentear no PIX:</strong></p>
-    <p>Chave: <strong>61995154296</strong> (celular)</p>
-  </section>
+    <label for="confirmacao">Confirmar presença?</label><br>
+    <select name="confirmacao" id="confirmacao" required>
+      <option value="">Selecione...</option>
+      <option value="Sim">Sim</option>
+      <option value="Não">Não</option>
+    </select><br><br>
 
-  <div class="baloon" id="giftTip">
-    🎁 Caso queira nos presentear com algo que não esteja na lista, fique à vontade!!
-  </div>
+    <button type="submit">Enviar</button>
+  </form>
 
-  <section class="bingo">
-    <h2>Bingo dos Noivos 🎲</h2>
-    <p>Teremos um bingo divertido durante a festa! Participe e ajude no nosso grande dia. 💖</p>
-    <p>Cartelas por <strong>R$5,00 cada</strong>.</p>
-    <form action="https://formsubmit.co/cdossantoseduardofelipe@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="Participação no Bingo dos Noivos" />
-      <input type="hidden" name="_captcha" value="false" />
-
-      <label for="comprador">Seu nome:</label>
-      <input type="text" id="comprador" name="nome_comprador" required><br>
-
-      <label>Você quer participar?</label><br>
-      <input type="radio" name="bingo" value="Sim" onclick="document.getElementById('bingoForm').style.display='block'" required> Sim
-      <input type="radio" name="bingo" value="Não" onclick="document.getElementById('bingoForm').style.display='none'"> Não
-      <br><br>
-
-      <div id="bingoForm" style="display:none;">
-        <label>Quantas cartelas deseja?</label><br>
-        <label><input type="radio" name="quantidade_cartelas" value="1" required> 1</label><br>
-        <label><input type="radio" name="quantidade_cartelas" value="2"> 2</label><br>
-        <label><input type="radio" name="quantidade_cartelas" value="3"> 3</label><br>
-        <label><input type="radio" name="quantidade_cartelas" value="4"> 4</label><br>
-        <label><input type="radio" name="quantidade_cartelas" value="5"> 5</label><br><br>
-
-        <button type="submit" class="bingo-button">Quero Participar</button>
-
-        <p style="margin-top: 1rem;"><strong>Chave PIX:</strong><br>61995154296 (celular)</p>
-      </div>
-    </form>
-  </section>
-
-  <footer>
-    <p>Com carinho, Eduardo & Iasmini ❤️</p>
-    <p>Nos vemos no grande dia!</p>
-    <div class="save-the-date">Save the Date</div>
-  </footer>
-
-  <script>
-    const weddingDate = new Date("2025-11-23T12:30:00").getTime();
-    const countdownEl = document.getElementById("countdown");
-    const giftSection = document.getElementById("presentes");
-    const giftTip = document.getElementById("giftTip");
-
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const diff = weddingDate - now;
-      if (diff <= 0) {
-        countdownEl.textContent = "É hoje o grande dia!";
-        return;
-      }
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      countdownEl.textContent = `Faltam ${days} dias, ${hours} horas e ${minutes} minutos!`;
-    }
-
-    function preencherNomeConvidado() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const nome = urlParams.get('convidado');
-      if (nome) {
-        document.getElementById('nome').value = decodeURIComponent(nome);
-        document.getElementById('mensagem-convidado').textContent = `Olá ${nome}, por favor, confirme sua presença abaixo:`;
-      }
-    }
-
-    function checkGiftSectionVisible() {
-      const rect = giftSection.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom >= 0) {
-        giftTip.style.display = 'block';
-      } else {
-        giftTip.style.display = 'none';
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-      updateCountdown();
-      setInterval(updateCountdown, 60000);
-      preencherNomeConvidado();
-      window.addEventListener('scroll', checkGiftSectionVisible);
-    });
-  </script>
 </body>
-  </html>
+</html>
